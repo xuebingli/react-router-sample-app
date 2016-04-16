@@ -1,5 +1,6 @@
 import React from 'react'
-import { Router, Route, hashHistory, Link } from 'react-router'
+import { Router, Route, hashHistory } from 'react-router'
+import NavLink from './NavLink'
 
 const Home    = () => <div><h1>Home</h1><Links /></div>
 const About   = () => <div><h1>About</h1><Links /></div>
@@ -7,9 +8,9 @@ const Contact = () => <div><h1>Contact</h1><Links /></div>
 
 const Links = () =>
   <nav>
-    <Link activeStyle={ styles.activeLink } to='/'>Home</Link>
-    <Link activeStyle={ styles.activeLink } to='/about'>About</Link>
-    <Link activeStyle={ styles.activeLink } to='/contact'>Contact</Link>
+    <NavLink to='/'>Home</NavLink>
+    <NavLink to='/about'>About</NavLink>
+    <NavLink to='/contact'>Contact</NavLink>
   </nav>
 
 const App = () =>
@@ -18,11 +19,5 @@ const App = () =>
     <Route path="/about" component={ About }></Route>
     <Route path="/contact" component={ Contact }></Route>
   </Router>
-
-const styles = {
-  activeLink: {
-    color: 'green'
-  }
-}
 
 export default App

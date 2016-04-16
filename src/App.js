@@ -7,9 +7,9 @@ const Contact = () => <div><h1>Contact</h1><Links /></div>
 
 const Links = () =>
   <nav>
-    <Link to='/'>Home</Link>
-    <Link to='/about'>About</Link>
-    <Link to='/contact'>Contact</Link>
+    <Link activeStyle={ styles.activeLink } to='/'>Home</Link>
+    <Link activeStyle={ styles.activeLink } to='/about'>About</Link>
+    <Link activeStyle={ styles.activeLink } to='/contact'>Contact</Link>
   </nav>
 
 const App = () =>
@@ -18,5 +18,11 @@ const App = () =>
     <Route path="/about" component={ About }></Route>
     <Route path="/contact" component={ Contact }></Route>
   </Router>
+
+const styles = {
+  activeLink: {
+    color: 'green'
+  }
+}
 
 export default App
